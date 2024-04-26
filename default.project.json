@@ -1,0 +1,54 @@
+{
+	"name": "rbx-bytesoft/platform-game",
+	"tree": {
+	  "$className": "DataModel",
+	  "ReplicatedStorage": {
+		"$className": "ReplicatedStorage",
+		"Assets": {
+		  "$className": "Folder",
+		  "$ignoreUnknownInstances": true
+		},
+		"Config": {
+		  "$path": "config/shared"
+		},
+		"Packages": {
+		  "$path": "Packages"
+		},
+		"$path": "src/shared"
+	  },
+	  "ServerScriptService": {
+		"$path": "src/server"
+	  },
+	  "ServerStorage": {
+		"$className": "ServerStorage",
+		"Assets": {
+		  "$className": "Folder",
+		  "$ignoreUnknownInstances": true
+		},
+		"Config": {
+		  "$path": "config/server"
+		},
+		"Packages": {
+		  "$path": "ServerPackages"
+		}
+	  },
+	  "SoundService": {
+		"$properties": {
+		  "RespectFilteringEnabled": true
+		}
+	  },
+	  "StarterPlayer": {
+		"StarterPlayerScripts": {
+		  "Client": {
+			"$path": "src/client"
+		  }
+		}
+	  },
+	  "Workspace": {
+		"$properties": {
+		  "FilteringEnabled": true
+		},
+		"$ignoreUnknownInstances": true
+	  }
+	}
+  }

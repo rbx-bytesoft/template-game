@@ -1,0 +1,74 @@
+{
+	// Place your snippets for lua here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"Create a Vide Component": {
+		"prefix": "videcomponent",
+		"scope": "lua",
+		"body": [
+			"local ReplicatedStorage = game:GetService(\"ReplicatedStorage\")",
+			"",
+			"local Vide = require(ReplicatedStorage.Packages.Vide)",
+			"",
+			"local Theme = require(script.Parent.Theme)",
+			"",
+			"local create = Vide.create",
+			"local derive = Vide.derive",
+			"local read = Vide.read",
+			"local source = Vide.source",
+			"local spring = Vide.spring",
+			"",
+			"export type Props = {",
+			"\t",
+			"}",
+			"",
+			"local function ${1:${TM_FILENAME_BASE/(.*?)\\..*/$1/}}(props: Props)",
+			"\treturn create \"Frame\" {",
+			"\t\tSize = UDim2.new(1, 0, 1, 0),",
+			"\t}",
+			"end",
+			"",
+			"return ${1:${TM_FILENAME_BASE/(.*?)\\..*/$1/}}"
+		],
+		"description": "Log output to console"
+	},
+	"Create a Vide Story": {
+		"prefix": "videstory",
+		"scope": "lua",
+		"body": [
+			"local ReplicatedStorage = game:GetService(\"ReplicatedStorage\")",
+			"",
+			"local Vide = require(ReplicatedStorage.Packages.Vide)",
+			"",
+			"local ${1:${TM_FILENAME_BASE/(.*?)\\..*/$1/}} = require(script.Parent.${1:${TM_FILENAME_BASE/(.*?)\\..*/$1/}})",
+			"",
+			"local create = Vide.create",
+			"local source = Vide.source",
+			"",
+			"return function(target: Frame)",
+			"\tlocal ContainerElement = function(props)",
+			"\t\treturn create \"Frame\" {",
+			"\t\t\tSize = UDim2.new(1, 0, 1, 0),",
+			"\t\t\tBackgroundTransparency = 1,",
+			"\t\t\ttable.unpack(props)",
+			"\t\t}",
+			"\tend",
+			"",
+			"\tlocal unmount = Vide.mount(function()",
+			"\t\treturn ContainerElement {",
+			"\t\t\t${1:${TM_FILENAME_BASE/(.*?)\\..*/$1/}} {}",
+			"\t\t}",
+			"\tend, target)",
+			"",
+			"\treturn function()",
+			"\t\tunmount()",
+			"\tend",
+			"end",
+			"",
+			""
+		],
+		"description": "Log output to console"
+	},
+}

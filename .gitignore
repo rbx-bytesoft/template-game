@@ -1,0 +1,10 @@
+# Project place file
+/platform-game.rbxlx
+
+# Roblox Studio lock files
+/*.rbxlx.lock
+/*.rbxl.lock
+
+# Wally packages
+/Packages
+/ServerPackages
